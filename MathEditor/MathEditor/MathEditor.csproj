@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.props" Condition="Exists('..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.props')" />
+  <Import Project="..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.75.1.14\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.75.1.14\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.75.1.14\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.75.1.14\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C84F95D2-DEC3-4388-A7CD-139B2A638D75}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MathEditor</RootNamespace>
+    <AssemblyName>MathEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="MathJax\MathJax-master\.gitignore" />
+    <None Include="MathJax\MathJax-master\.travis.yml" />
+    <None Include="MathJax\MathJax-master\bower.json" />
+    <None Include="MathJax\MathJax-master\composer.json" />
+    <None Include="MathJax\MathJax-master\CONTRIBUTING.md" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_AMS-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Calligraphic-Bold.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Calligraphic-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Fraktur-Bold.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Fraktur-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Main-Bold.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Main-Italic.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Main-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Math-BoldItalic.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Math-Italic.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Math-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_SansSerif-Bold.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_SansSerif-Italic.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_SansSerif-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Script-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Size1-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Size2-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Size3-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Size4-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Typewriter-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Vector-Bold.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Vector-Regular.woff" />
+    <None Include="MathJax\MathJax-master\es5\output\chtml\fonts\woff-v2\MathJax_Zero.woff" />
+    <None Include="MathJax\MathJax-master\LICENSE" />
+    <None Include="MathJax\MathJax-master\package.json" />
+    <None Include="MathJax\MathJax-master\README.md" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="MathJax\MathJax-master\es5\a11y\complexity.js" />
+    <Content Include="MathJax\MathJax-master\es5\a11y\explorer.js" />
+    <Content Include="MathJax\MathJax-master\es5\a11y\semantic-enrich.js" />
+    <Content Include="MathJax\MathJax-master\es5\adaptors\liteDOM.js" />
+    <Content Include="MathJax\MathJax-master\es5\core.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\asciimath.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\mml.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\mml\entities.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex-base.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex-full.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\action.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\all-packages.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\ams.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\amscd.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\autoload.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\bbox.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\boldsymbol.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\braket.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\bussproofs.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\cancel.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\color.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\colorV2.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\configMacros.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\enclose.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\extpfeil.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\html.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\mhchem.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\newcommand.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\noerrors.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\noundefined.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\physics.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\require.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\tagFormat.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\unicode.js" />
+    <Content Include="MathJax\MathJax-master\es5\input\tex\extensions\verb.js" />
+    <Content Include="MathJax\MathJax-master\es5\latest.js" />
+    <Content Include="MathJax\MathJax-master\es5\loader.js" />
+    <Content Include="MathJax\MathJax-master\es5\mml-chtml.js" />
+    <Content Include="MathJax\MathJax-master\es5\mml-svg.js" />
+    <Content Include="MathJax\MathJax-master\es5\node-main.js" />
+    <Content Include="MathJax\MathJax-master\es5\output\chtml.js" />
+    <Content Include="MathJax\MathJax-master\es5\output\chtml\fonts\tex.js" />
+    <Content Include="MathJax\MathJax-master\es5\output\svg.js" />
+    <Content Include="MathJax\MathJax-master\es5\output\svg\fonts\tex.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\functions\algebra.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\functions\elementary.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\functions\hyperbolic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\functions\trigonometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-capital.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-scripts.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-small.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\greek-symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\hebrew_letters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-lower-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-lower-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-lower-phonetic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-lower-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-bold-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-bold-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-double-struck.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-monospace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-sans-serif-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-sans-serif.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-mathfonts-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-rest.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-upper-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-upper-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\latin-upper-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_angles.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_arrows.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_delimiters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_digits.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_geometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_harpoons.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_non_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\math_whitespace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\symbols\other_stars.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\energy.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\length.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\memory.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\other.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\speed.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\temperature.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\time.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\volume.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\en\units\weight.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\functions\algebra.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\functions\elementary.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\functions\hyperbolic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\functions\trigonometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-capital.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-scripts.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-small.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\greek-symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\hebrew_letters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-lower-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-lower-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-lower-phonetic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-lower-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-bold-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-bold-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-double-struck.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-monospace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-sans-serif-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-sans-serif.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-mathfonts-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-rest.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-upper-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-upper-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\latin-upper-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_angles.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_arrows.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_delimiters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_digits.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_geometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_harpoons.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_non_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\math_whitespace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\symbols\other_stars.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\energy.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\length.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\memory.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\other.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\speed.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\temperature.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\time.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\volume.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\es\units\weight.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\functions\algebra.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\functions\elementary.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\functions\hyperbolic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\functions\trigonometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-capital.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-scripts.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-small.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\greek-symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\hebrew_letters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-lower-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-lower-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-lower-phonetic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-lower-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-bold-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-bold-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-double-struck.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-monospace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-sans-serif-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-sans-serif.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-mathfonts-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-rest.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-upper-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-upper-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\latin-upper-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_angles.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_arrows.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_delimiters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_digits.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_geometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_harpoons.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_non_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\math_whitespace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\symbols\other_stars.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\energy.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\length.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\memory.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\other.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\speed.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\temperature.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\time.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\volume.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\fr\units\weight.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\mathmaps_ie.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\functions\algebra.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\functions\elementary.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\functions\hyperbolic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\functions\trigonometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-capital.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-mathfonts.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-scripts.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-small.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\greek-symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\hebrew_letters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-lower-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-lower-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-lower-phonetic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-lower-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-bold-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-bold-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-double-struck.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-fraktur.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-monospace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-sans-serif-bold-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-sans-serif-bold.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-sans-serif-italic.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-sans-serif.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-mathfonts-script.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-rest.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-upper-double-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-upper-normal.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\latin-upper-single-accent.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_angles.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_arrows.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_delimiters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_digits.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_geometry.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_harpoons.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_non_characters.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_symbols.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\math_whitespace.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\symbols\other_stars.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\energy.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\length.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\memory.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\other.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\speed.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\temperature.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\time.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\volume.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\mathmaps\nemeth\units\weight.js" />
+    <Content Include="MathJax\MathJax-master\es5\sre\sre_browser.js" />
+    <Content Include="MathJax\MathJax-master\es5\startup.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-chtml-full.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-chtml.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-mml-chtml.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-mml-svg.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-svg-full.js" />
+    <Content Include="MathJax\MathJax-master\es5\tex-svg.js" />
+    <Content Include="MathJax\MathJax-master\es5\ui\menu.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.75.1.14\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.75.1.14\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.75.1.14\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.75.1.14\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.75.1.143\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.targets" Condition="Exists('..\packages\CefSharp.WinForms.75.1.143\build\CefSharp.WinForms.targets')" />
+</Project>

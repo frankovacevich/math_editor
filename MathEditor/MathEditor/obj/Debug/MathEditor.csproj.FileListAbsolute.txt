@@ -1,0 +1,10 @@
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\bin\Debug\MathEditor.exe.config
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\bin\Debug\MathEditor.exe
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\bin\Debug\MathEditor.pdb
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.csprojAssemblyReference.cache
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.Form1.resources
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.Properties.Resources.resources
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.csproj.GenerateResource.cache
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.csproj.CoreCompileInputs.cache
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.exe
+C:\Users\fran_\Documents\Workspace\matheditor\MathEditor\MathEditor\obj\Debug\MathEditor.pdb
